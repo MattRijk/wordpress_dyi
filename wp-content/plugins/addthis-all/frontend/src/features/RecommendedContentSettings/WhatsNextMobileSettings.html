@@ -1,0 +1,79 @@
+<div
+    tool-gallery-settings-page
+    save="save"
+    go-back="goBack"
+    feature-settings="recommendedContent"
+    tool-pco="wnm"
+>
+    <h2 translate>tool_recommended_content_whats_next_mobile_name</h2>
+    <p class="tool-gallery-subtitle" translate>
+        tool_listing_recommended_content_whats_next_mobile_description
+    </p>
+
+    <label
+        for="addthis-recommended-content-{{toolPco}}-title"
+        class="strong"
+        translate
+    >
+        tool_settings_title_label
+    </label>
+    <input
+        type="text"
+        ng-model="settings.title"
+        name="addthis-recommended-content-{{toolPco}}-title"
+        id="addthis-recommended-content-{{toolPco}}-title"
+    />
+
+    <div
+        layers-theme-picker
+        ng-model="settings.theme"
+        feature-name="recommended-content"
+        tool-pco="{{toolPco}}"
+        themes="dark,gray,light"
+    >
+    </div>
+
+    <h3 translate>layers_hide_on_homepage_title</h3>
+    <div
+        tool-radio-buttons-yes-no
+        ng-model="settings.__hideOnHomepage"
+        feature-name="recommended-content"
+        tool-pco="{{toolPco}}"
+        field-name="hideonhomepage"
+    >
+    </div>
+
+    <div
+        layers-hide-on-urls
+        ng-model="settings.__hideOnUrls"
+        feature-name="recommended-content"
+        tool-pco="{{toolPco}}"
+    >
+    </div>
+
+    <div
+        ng-include
+        src="'/features/RecommendedContentSettings/PromoteUrlField.html'"
+    >
+    </div>
+
+    <label
+        for="addthis-recommended-content-{{toolPco}}-responsive"
+        class="strong"
+        translate
+    >
+        layers_responsive_width
+    </label>
+    <input
+        type="number"
+        min="0"
+        ng-model="settings.responsive"
+        name="addthis-recommended-content-{{toolPco}}-responsive"
+        id="addthis-recommended-content-{{toolPco}}-responsive"
+    />
+    <label
+        for="addthis-recommended-content-{{toolPco}}-responsive"
+    >
+    px
+    </label>
+</div>

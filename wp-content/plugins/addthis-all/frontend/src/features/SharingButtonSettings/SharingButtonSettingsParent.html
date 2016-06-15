@@ -1,0 +1,25 @@
+<div ng-controller="SharingButtonSettingsCtrl">
+    <div class="header-container">
+        <div ng-include class="header-background" src="'/images/logo-pattern.svg'"></div>
+        <div ng-include class="header-logo" src="'/images/addthis-logo.svg'"></div>
+    </div>
+
+    <form
+      name="form"
+      novalidate
+      can-edit-tools-check
+      debug-hot-keys
+    >
+        <h1 translate>registered_intro_header_share_tools</h1>
+
+        <section
+            ng-include
+            src="'/features/CrossPluginWarnings/CrossPluginWarnings.html'"
+        >
+        </section>
+
+        <div ng-show="globalOptions.debug_enable">
+            <pre>sharing buttons = {{sharingButtons | json}}</pre>
+        </div>
+    </form>
+</div>

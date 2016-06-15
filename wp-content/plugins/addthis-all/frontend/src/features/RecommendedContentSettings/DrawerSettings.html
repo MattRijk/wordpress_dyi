@@ -1,0 +1,103 @@
+<div
+    tool-gallery-settings-page
+    save="save"
+    go-back="goBack"
+    feature-settings="recommendedContent"
+    tool-pco="cod"
+    pro
+>
+    <h2 translate>tool_recommended_content_drawer_name</h2>
+    <p class="tool-gallery-subtitle" translate>
+        tool_listing_recommended_content_drawer_description
+    </p>
+
+    <label
+        for="addthis-recommended-content-{{toolPco}}-title"
+        class="strong"
+        translate
+    >
+        tool_settings_title_label
+    </label>
+    <input
+        type="text"
+        ng-model="settings.title"
+        name="addthis-recommended-content-{{toolPco}}-title"
+        id="addthis-recommended-content-{{toolPco}}-title"
+    />
+
+    <h3 translate>layers_position_header</h3>
+    <label for="addthis-recommended-content-{{toolPco}}-position-left">
+        <input
+            type="radio"
+            ng-model="settings.position"
+            value="left"
+            name="addthis-recommended-content}-{{toolPco}}-position-left"
+            id="addthis-recommended-content-{{toolPco}}-position-left"
+        />
+        <span translate>layers_offset_location_left_label</span>
+    </label>
+    <label for="addthis-recommended-content-{{toolPco}}-position-right">
+        <input
+            type="radio"
+            ng-model="settings.position"
+            value="right"
+            name="addthis-recommended-content-{{toolPco}}-position-right"
+            id="addthis-recommended-content-{{toolPco}}-position-right"
+        />
+        <span translate>layers_offset_location_right_label</span>
+    </label>
+
+    <div
+        layers-theme-picker
+        ng-model="settings.theme"
+        feature-name="recommended-content"
+        tool-pco="{{toolPco}}"
+    >
+    </div>
+
+    <h3 translate>layers_animation_header</h3>
+    <label for="addthis-recommended-content-{{toolPco}}-animation-push">
+        <input
+            type="radio"
+            ng-model="settings.animationType"
+            value="push"
+            name="addthis-recommended-content}-{{toolPco}}-animation-push"
+            id="addthis-recommended-content-{{toolPco}}-animation-push"
+        />
+        <span translate>layers_animation_push_label</span>
+    </label>
+    <label for="addthis-recommended-content-{{toolPco}}-animation-overlay">
+        <input
+            type="radio"
+            ng-model="settings.animationType"
+            value="overlay"
+            name="addthis-recommended-content-{{toolPco}}-animation-overlay"
+            id="addthis-recommended-content-{{toolPco}}-animation-overlay"
+        />
+        <span translate>layers_animation_overlay_label</span>
+    </label>
+
+    <h3 translate>layers_hide_on_homepage_title</h3>
+    <div
+        tool-radio-buttons-yes-no
+        ng-model="settings.__hideOnHomepage"
+        feature-name="recommended-content"
+        tool-pco="{{toolPco}}"
+        field-name="hideonhomepage"
+    >
+    </div>
+
+    <div
+        layers-hide-on-urls
+        ng-model="settings.__hideOnUrls"
+        feature-name="recommended-content"
+        tool-pco="{{toolPco}}"
+    >
+    </div>
+
+    <div
+        ng-include
+        src="'/features/RecommendedContentSettings/PromoteUrlField.html'"
+    >
+    </div>
+</div>

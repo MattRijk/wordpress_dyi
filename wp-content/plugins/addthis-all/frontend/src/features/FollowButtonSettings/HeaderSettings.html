@@ -1,0 +1,103 @@
+<div
+    tool-gallery-settings-page
+    save="save"
+    go-back="goBack"
+    feature-settings="followButtons"
+    tool-pco="smlfw"
+>
+    <h2 translate>tool_follow_header_name</h2>
+    <p
+        class="tool-gallery-subtitle"
+        translate
+    >
+        tool_settings_follow_header_description
+    </p>
+
+    <label
+        for="addthis-follow-buttons-{{toolPco}}-title"
+        class="strong"
+        translate
+    >
+        tool_settings_title_label
+    </label>
+    <input
+        type="text"
+        ng-model="settings.title"
+        name="addthis-follow-buttons-{{toolPco}}-title"
+        id="addthis-follow-buttons-{{toolPco}}-title"
+    />
+
+    <div
+        follow-service-picker
+        ng-model="settings.services"
+        tool-pco="{{toolPco}}"
+    >
+    </div>
+
+    <div
+        layers-theme-picker
+        ng-model="settings.theme"
+        feature-name="follow-buttons"
+        tool-pco="{{toolPco}}"
+    >
+    </div>
+
+    <div ng-show="$parent.globalOptions.addthis_plugin_controls === 'AddThis'">
+        <h3 translate>layers_hide_on_homepage_title</h3>
+        <div
+            tool-radio-buttons-yes-no
+            ng-model="settings.__hideOnHomepage"
+            feature-name="follow-buttons"
+            tool-pco="{{toolPco}}"
+            field-name="hideonhomepage"
+        >
+        </div>
+
+        <div
+            layers-hide-on-urls
+            ng-model="settings.__hideOnUrls"
+            feature-name="follow-buttons"
+            tool-pco="{{toolPco}}"
+        >
+        </div>
+    </div>
+
+    <label
+        for="addthis-follow-buttons-{{toolPco}}-responsive"
+        class="strong"
+        translate
+    >
+        layers_responsive_width
+    </label>
+    <input
+        type="number"
+        min="0"
+        ng-model="settings.responsive"
+        name="addthis-follow-buttons-{{toolPco}}-responsive"
+        id="addthis-follow-buttons-{{toolPco}}-responsive"
+    />
+    <label
+        for="addthis-follow-buttons-{{toolPco}}-responsive"
+    >
+    px
+    </label>
+
+    <div
+        layers-offset-picker
+        positions="top,bottom"
+        ng-model="settings.offset"
+        feature-name="follow-buttons"
+        tool-pco="{{toolPco}}"
+    >
+    </div>
+
+    <h3 translate>layers_thank_you</h3>
+    <div
+        tool-radio-buttons-yes-no
+        ng-model="settings.thankyou"
+        feature-name="follow-buttons"
+        tool-pco="{{toolPco}}"
+        field-name="thankyou"
+    >
+    </div>
+</div>
